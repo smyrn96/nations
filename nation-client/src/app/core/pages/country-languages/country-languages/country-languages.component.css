@@ -1,0 +1,13 @@
+.country-languages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  .title-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4e1e6;
+  }
+}

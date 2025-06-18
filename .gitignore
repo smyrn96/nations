@@ -5,6 +5,8 @@
 /nation-client/tmp/
 /nation-client/out-tsc/
 /nation-client/.angular/
+/nation-client/.DS_Store
+
 
 # Dependency folders
 /nation-client/node_modules/
@@ -66,4 +68,6 @@
 
 ### VS Code ###
 /nation/.vscode/
+/nation/.DS_Store
+
 

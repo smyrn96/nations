@@ -1,0 +1,9 @@
+<div class="main-container">
+  <h1 class="title-item">{{ title }}</h1>
+  <ol class="countries-container">
+    <country-grid
+      *ngFor="let country of countries"
+      [country]="country"
+    ></country-grid>
+  </ol>
+</div>

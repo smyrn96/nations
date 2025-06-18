@@ -1,0 +1,17 @@
+<li class="country-grid">
+  <a
+    class="inner-grid"
+    *ngIf="!languageName; else languageItem"
+    [routerLink]="getLinkPath(country.countryId)"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <div class="country-name">{{ country.name }}</div>
+    <div>{{ country.area }}</div>
+    <div>{{ country.countryCode2 }}</div>
+  </a>
+
+  <ng-template #languageItem>
+    <div class="inner-grid">{{ languageName }}</div>
+  </ng-template>
+</li>

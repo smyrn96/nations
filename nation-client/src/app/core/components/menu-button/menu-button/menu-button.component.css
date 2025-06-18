@@ -1,0 +1,15 @@
+.menu-button-container {
+  text-decoration: none;
+  color: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 15px;
+  background: #c4e1e6;
+  padding: 0.5rem 1.5rem;
+  font-size: 24px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
