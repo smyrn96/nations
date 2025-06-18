@@ -1,3 +1,5 @@
+.DS_Store
+
 # Angular build outputs
 /nation-client/dist/
 /nation-client/tmp/
