@@ -1,0 +1,83 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/nation-client/dist
+/nation-client/tmp
+/nation-client/out-tsc
+# Only exists if Bazel was run
+/nation-client/bazel-out
+
+# dependencies
+/nation-client/node_modules
+
+# profiling files
+/nation-client/chrome-profiler-events*.json
+
+# IDEs and editors
+/nation-client/.idea
+/nation-client/.project
+/nation-client/.classpath
+/nation-client/.c9/
+/nation-client/*.launch
+/nation-client/.settings/
+/nation-client/*.sublime-workspace
+
+# IDE - VSCode
+/nation-client/.vscode/*
+/nation-client/!.vscode/settings.json
+/nation-client/!.vscode/tasks.json
+/nation-client/!.vscode/launch.json
+/nation-client/!.vscode/extensions.json
+/nation-client/.history/*
+
+# misc
+/nation-client/.angular/cache
+/nation-client/.sass-cache
+/nation-client/connect.lock
+/nation-client/coverage
+/nation-client/libpeerconnection.log
+/nation-client/npm-debug.log
+/nation-client/yarn-error.log
+/nation-client/testem.log
+/nation-client/typings
+
+# System Files
+/nation-client/.DS_Store
+/nation-client/Thumbs.db
+
+
+#Backend
+/nation/HELP.md
+/nation/target/
+/nation/.mvn/wrapper/maven-wrapper.jar
+/nation/!**/src/main/**/target/
+/nation/!**/src/test/**/target/
+
+### STS ###
+/nation/.apt_generated
+/nation/.classpath
+/nation/.factorypath
+/nation/.project
+/nation/.settings
+/nation/.springBeans
+/nation/.sts4-cache
+
+### IntelliJ IDEA ###
+/nation/.idea
+/nation/*.iws
+/nation/*.iml
+/nation/*.ipr
+
+### NetBeans ###
+/nation/nbproject/private/
+/nation/nbbuild/
+/nation/dist/
+/nation/nbdist/
+/nation/.nb-gradle/
+/nation/build/
+/nation/!**/src/main/**/build/
+/nation/!**/src/test/**/build/
+
+### VS Code ###
+/nation/.vscode/
+
