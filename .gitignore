@@ -1,50 +1,34 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Angular build outputs
+/nation-client/dist/
+/nation-client/tmp/
+/nation-client/out-tsc/
+/nation-client/.angular/
 
-# compiled output
-/nation-client/dist
-/nation-client/tmp
-/nation-client/out-tsc
-# Only exists if Bazel was run
-/nation-client/bazel-out
+# Dependency folders
+/nation-client/node_modules/
 
-# dependencies
-/nation-client/node_modules
+# Testing coverage reports
+/nation-client/coverage/
 
-# profiling files
-/nation-client/chrome-profiler-events*.json
+# Environment files (optional, if you're using different envs)
+# Uncomment if you want to hide secrets
+# /nation-client/src/environments/environment.prod.ts
+# /nation-client/src/environments/environment.ts
 
-# IDEs and editors
-/nation-client/.idea
-/nation-client/.project
-/nation-client/.classpath
-/nation-client/.c9/
-/nation-client/*.launch
-/nation-client/.settings/
-/nation-client/*.sublime-workspace
+# IDE/Editor settings
+/nation-client/.idea/
+/nation-client/.vscode/
+/nation-client/.history/
 
-# IDE - VSCode
-/nation-client/.vscode/*
-/nation-client/!.vscode/settings.json
-/nation-client/!.vscode/tasks.json
-/nation-client/!.vscode/launch.json
-/nation-client/!.vscode/extensions.json
-/nation-client/.history/*
-
-# misc
-/nation-client/.angular/cache
-/nation-client/.sass-cache
-/nation-client/connect.lock
-/nation-client/coverage
-/nation-client/libpeerconnection.log
+# Logs and debug
 /nation-client/npm-debug.log
 /nation-client/yarn-error.log
 /nation-client/testem.log
-/nation-client/typings
+/nation-client/karma-debug.log
 
-# System Files
+# OS and misc
 /nation-client/.DS_Store
 /nation-client/Thumbs.db
-
 
 #Backend
 /nation/HELP.md
