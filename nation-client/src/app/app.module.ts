@@ -10,6 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuButtonComponent } from './core/components/menu-button/menu-button/menu-button.component';
 import { CountryGridComponent } from './core/components/country-grid/country-grid/country-grid.component';
 import { CountryLanguagesComponent } from './core/pages/country-languages/country-languages/country-languages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { GenericTableComponent } from './core/components/generic-table/generic-table/generic-table.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +25,17 @@ import { CountryLanguagesComponent } from './core/pages/country-languages/countr
     MenuButtonComponent,
     CountryGridComponent,
     CountryLanguagesComponent,
+    GenericTableComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

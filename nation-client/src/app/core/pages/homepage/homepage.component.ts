@@ -9,7 +9,7 @@ import { CountryService } from '../../services/country/country.service';
 })
 export class HomepageComponent implements OnInit {
   countries: Country[] = [];
-  title: string = 'Countries';
+  title: string = 'All Countries';
 
   constructor(private countryService: CountryService) {}
 

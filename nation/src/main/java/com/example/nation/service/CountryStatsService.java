@@ -1,5 +1,6 @@
 package com.example.nation.service;
 
+import com.example.nation.dto.CountryRegionStatsView;
 import com.example.nation.dto.CountryStatsMaxGdpDTO;
 import com.example.nation.entity.CountryStats;
 import com.example.nation.repository.CountryStatsRepository;
@@ -29,6 +30,10 @@ public class CountryStatsService {
 
     public List<CountryStats> getMaxGdpPerCapitaStats() {
         return repository.findMaxGdpPerCapitaStats();
+    }
+
+    public List<CountryRegionStatsView> getCountryStatsView(){
+        return repository.getCountryRegionStatsView();
     }
 
     public CountryStats saveCountry (CountryStats countryStats) {

@@ -1,5 +1,6 @@
 package com.example.nation.controller;
 
+import com.example.nation.dto.CountryRegionStatsView;
 import com.example.nation.entity.CountryStats;
 import com.example.nation.service.CountryStatsService;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,11 @@ public class CountryStatsController {
     @GetMapping("/max-gdp-per-capita")
     public List<CountryStats> getMaxGdpPerCapita() {
         return countryStatsService.getMaxGdpPerCapitaStats();
+    }
+
+    @GetMapping("/region-stats")
+    public List<CountryRegionStatsView> getStatsView() {
+        return service.getCountryStatsView();
     }
 
     @PostMapping

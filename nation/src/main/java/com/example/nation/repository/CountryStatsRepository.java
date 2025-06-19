@@ -1,5 +1,6 @@
 package com.example.nation.repository;
 
+import com.example.nation.dto.CountryRegionStatsView;
 import com.example.nation.entity.CountryStats;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -23,5 +24,19 @@ public interface CountryStatsRepository extends JpaRepository<CountryStats, Inte
     )
 """, nativeQuery = true)
     List<CountryStats> findMaxGdpPerCapitaStats();
+
+    @Query("""
+    SELECT new com.example.nation.dto.CountryRegionStatsView(
+        c.region.continent.name,
+        c.region.name,
+        c.name,
+        cs.year,
+        cs.population,
+        cs.gdp
+    )
+    FROM CountryStats cs
+    JOIN cs.country c
+""")
+    List<CountryRegionStatsView> getCountryRegionStatsView();
 
 }

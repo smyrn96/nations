@@ -1,1 +1,8 @@
-<p>countries-table works!</p>
+<div class="table-container">
+  <h1 class="title-item">{{ title }}</h1>
+  <generic-table
+    [columns]="columns"
+    [data]="stats"
+    *ngIf="columns.length && stats.length"
+  ></generic-table>
+</div>
