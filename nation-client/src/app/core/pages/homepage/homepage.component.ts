@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../../models/country.model';
 import { CountryService } from '../../services/country/country.service';
+import { LoaderService } from '../../services/loader/loader.service';
 
 @Component({
   selector: 'homepage',
@@ -10,14 +11,30 @@ import { CountryService } from '../../services/country/country.service';
 export class HomepageComponent implements OnInit {
   countries: Country[] = [];
   title: string = 'All Countries';
+  isLoading = false;
 
-  constructor(private countryService: CountryService) {}
+  constructor(
+    private countryService: CountryService,
+    private loaderService: LoaderService
+  ) {}
 
   ngOnInit(): void {
-    this.countryService.getAllCountries().subscribe((data) => {
-      this.countries = data;
+    this.loaderService.show();
+    this.countryService.getAllCountries().subscribe({
+      next: (res) => {
+        this.countries = res;
+      },
+      error: (err) => {
+        console.error(err);
+        this.loaderService.hide();
+      },
+      complete: () => {
+        this.loaderService.hide();
+      },
     });
 
-    console.log(this.countries);
+    this.loaderService.loading$.subscribe((status) => {
+      this.isLoading = status;
+    });
   }
 }

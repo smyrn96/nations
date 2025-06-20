@@ -1,1 +1,45 @@
-<p>continents-table works!</p>
+<div class="table-container">
+  <h1 class="title-item">{{ title }}</h1>
+  <div class="filters-container">
+    <select (change)="filterByRegion($event)" class="select-container">
+      <option value="">All Regions</option>
+      <option *ngFor="let r of regions" [value]="r.name">{{ r.name }}</option>
+    </select>
+    <div class="filters">
+      <label>
+        From Year:
+        <input
+          type="number"
+          [(ngModel)]="fromYear"
+          name="fromYear"
+          min="1900"
+          max="2100"
+        />
+      </label>
+
+      <label>
+        To Year:
+        <input
+          type="number"
+          [(ngModel)]="toYear"
+          name="toYear"
+          min="1900"
+          max="2100"
+        />
+      </label>
+    </div>
+    <button (click)="applyYearFilter()">Filter</button>
+  </div>
+
+  <div *ngIf="countryRegionStats.length === 0 && !isLoading; else showStats">
+    <h3 class="title-item">No continents and region stats available.</h3>
+  </div>
+
+  <ng-template #showStats>
+    <generic-table
+      [columns]="columns"
+      [data]="countryRegionStats"
+      *ngIf="columns.length && countryRegionStats.length"
+    ></generic-table>
+  </ng-template>
+</div>

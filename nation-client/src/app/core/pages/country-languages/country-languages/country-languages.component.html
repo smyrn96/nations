@@ -1,9 +1,16 @@
 <div class="country-languages-container">
   <h1 class="title-item">{{ title }}</h1>
-  <country-grid
-    *ngFor="let language of languages"
-    [languageName]="language.language"
-    [ngStyle]="{ width: language.language ? '100%' : 'auto' }"
-  >
-  </country-grid>
+
+  <div *ngIf="languages.length === 0 && !isLoading; else showLanguages">
+    <h3 class="title-item">No languages available.</h3>
+  </div>
+
+  <ng-template #showLanguages>
+    <country-grid
+      *ngFor="let language of languages"
+      [languageName]="language.language"
+      [ngStyle]="{ width: language.language ? '100%' : 'auto' }"
+    >
+    </country-grid>
+  </ng-template>
 </div>

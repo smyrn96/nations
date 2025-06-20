@@ -32,8 +32,9 @@ public class CountryStatsService {
         return repository.findMaxGdpPerCapitaStats();
     }
 
-    public List<CountryRegionStatsView> getCountryStatsView(){
-        return repository.getCountryRegionStatsView();
+    public List<CountryRegionStatsView> getCountryStatsView( String region,  Integer from, Integer to){
+        return repository.getCountryRegionStatsView( region,  from, to);
+
     }
 
     public CountryStats saveCountry (CountryStats countryStats) {

@@ -1,9 +1,16 @@
 <div class="main-container">
   <h1 class="title-item">{{ title }}</h1>
-  <ol class="countries-container">
-    <country-grid
-      *ngFor="let country of countries"
-      [country]="country"
-    ></country-grid>
-  </ol>
+
+  <div *ngIf="countries.length === 0 && !isLoading; else showCountries">
+    <h3 class="title-item">No languages available.</h3>
+  </div>
+
+  <ng-template #showCountries>
+    <ol class="countries-container">
+      <country-grid
+        *ngFor="let country of countries"
+        [country]="country"
+      ></country-grid>
+    </ol>
+  </ng-template>
 </div>

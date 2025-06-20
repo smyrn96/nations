@@ -36,7 +36,10 @@ public interface CountryStatsRepository extends JpaRepository<CountryStats, Inte
     )
     FROM CountryStats cs
     JOIN cs.country c
+     WHERE (:region IS NULL OR LOWER(c.region.name) = LOWER(:region))
+          AND (:from IS NULL OR cs.year >= :from)
+          AND (:to IS NULL OR cs.year <= :to)
 """)
-    List<CountryRegionStatsView> getCountryRegionStatsView();
+    List<CountryRegionStatsView> getCountryRegionStatsView(String region, Integer from, Integer to);
 
 }

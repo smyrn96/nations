@@ -20,6 +20,7 @@
         border-bottom-left-radius: 8px;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
+        color: black;
       }
 
       tr td:first-child {
@@ -34,10 +35,15 @@
 
       thead {
         background-color: #c4e1e6 !important;
-        color: white;
         border: none;
         border-radius: 12px;
         border: none;
+
+        th {
+          color: white !important;
+          font-weight: bold;
+          font-size: 16px;
+        }
       }
 
       .mat-header-cell,

@@ -15,6 +15,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { GenericTableComponent } from './core/components/generic-table/generic-table/generic-table.component';
+import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './core/components/loader/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { GenericTableComponent } from './core/components/generic-table/generic-t
     CountryGridComponent,
     CountryLanguagesComponent,
     GenericTableComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { GenericTableComponent } from './core/components/generic-table/generic-t
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

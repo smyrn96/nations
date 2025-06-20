@@ -35,8 +35,12 @@ public class CountryStatsController {
     }
 
     @GetMapping("/region-stats")
-    public List<CountryRegionStatsView> getStatsView() {
-        return service.getCountryStatsView();
+    public List<CountryRegionStatsView> getStatsView(
+            @RequestParam(required = false) String region,
+            @RequestParam(required = false) Integer from,
+            @RequestParam(required = false) Integer to
+    ) {
+        return service.getCountryStatsView(region, from, to);
     }
 
     @PostMapping
