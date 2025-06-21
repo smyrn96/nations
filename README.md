@@ -10,6 +10,73 @@
 
 ---
 
+# 🏁 How to Run the Full Stack Application
+
+---
+
+## ✅ Prerequisites
+
+Ensure the following tools are installed:
+
+| Tool           | Version          |
+|----------------|------------------|
+| Java           | 17 or higher     |
+| Maven          | 3.6+             |
+| Node.js        | 16+              |
+| npm or yarn    | npm 8+ / yarn 1+ |
+| Angular CLI    | 15+              |
+| MariaDB Server | Installed & running |
+
+---
+
+## 🗃 Step 1: Setup the MariaDB Database
+
+1. **Start MariaDB** (locally or via Docker).
+2. **Run your SQL schema** to initialize the DB:
+
+```bash
+mysql -u your_user -p your_database < schema.sql
+```
+
+## Step 2: Run the Spring Boot API
+
+### Navigate to the backend directory:
+
+```bash
+cd path/to/backend-directory
+./mvnw spring-boot:run
+```
+
+### Example Configuration for MariaDB
+
+```properties
+# Database configuration
+spring.datasource.url=jdbc:mariadb://localhost:3306/your_database
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+
+# JPA / Hibernate
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+
+# Server settings
+server.port=8080
+
+```
+
+### Step 3: Run the Angular Frontend
+Navigate to the frontend project directory:
+```bash
+cd path/to/frontend-directory
+npm install
+ng serve
+```
+
+### Navigate to the client URL:
+http://localhost:4200
+
+
 ## 🔙 Backend API (Spring Boot)
 
 ### 📁 Base URL
